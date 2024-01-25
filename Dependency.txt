@@ -1,1 +1,7 @@
+nitrogen
+i3lock
+picom
+awesome
+rofi 
+polybar
 
