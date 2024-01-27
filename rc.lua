@@ -52,7 +52,7 @@ end
 beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "x-terminal-emulator"
+terminal = "gnome-terminal"
 editor = os.getenv("EDITOR") or "editor"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -262,6 +262,10 @@ globalkeys = gears.table.join(
     awful.key({ }, "XF86MonBrightnessDown", function ()  awful.spawn("light -U 10") end,
               {description = "Decrease brightness", group = "hotkeys"}),
     awful.key({ }, "XF86AudioRaiseVolume", function () 						   	awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ +5%", false) end,
+-- PrtSc to run Flameshot
+    awful.key({}, "Print", function () awful.spawn("flameshot") end,
+          {description = "Run Flameshot", group = "hotkeys"}),
+
           {description = "Increase volume", group = "hotkeys"}),
     awful.key({ modkey }, "l", function () awful.spawn("i3lock") end,
           {description = "lock screen", group = "hotkeys"}),
@@ -348,6 +352,22 @@ globalkeys = gears.table.join(
     end,
     {description = "launch Brave Browser", group = "launcher"}
 ),
+-- Mod (Windows) + F to open Nautilus
+    awful.key({ modkey }, "f", function () awful.spawn("nautilus") end,
+          {description = "Open Nautilus", group = "launcher"}),
+-- Mod (Windows) + Shift + D to open Discord
+    awful.key({ modkey, "Shift" }, "d", function () awful.spawn("discord") end,
+          {description = "Open Discord", group = "launcher"}),
+
+-- Mod + N to run nitrogen
+    awful.key({ modkey }, "n", function () awful.spawn("nitrogen") end,
+          {description = "Run Nitrogen", group = "launcher"}),
+-- Mod + V to run VLC
+    awful.key({ modkey }, "v", function () awful.spawn("vlc") end,
+          {description = "Run VLC", group = "launcher"}),
+
+    awful.key({ modkey, "Shift" }, "b", function () awful.spawn("blueman-manager") end,
+          {description = "Open Blueman Manager", group = "launcher"}),
     awful.key({ modkey, "Shift" }, "s",
     function ()
         awful.spawn("spotify")
