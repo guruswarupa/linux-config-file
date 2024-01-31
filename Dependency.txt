@@ -4,4 +4,4 @@ picom
 awesome
 rofi 
 polybar
-
+font-manager
