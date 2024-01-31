@@ -12,3 +12,7 @@ ExecStart=/usr/bin/i3lock
 
 [Install]
 WantedBy=sleep.target
+
+sudo systemctl enable i3lock-on-lid-close.service
+sudo systemctl start i3lock-on-lid-close.service
+sudo systemctl status i3lock-on-lid-close.service
