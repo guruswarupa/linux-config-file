@@ -5,3 +5,15 @@ awesome
 rofi 
 polybar
 font-manager
+pulseaudio
+light
+bash-completion
+wget
+git
+xinput
+xorg
+lightdm
+Nautilus
+kitty
+chromium
+
