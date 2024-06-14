@@ -52,7 +52,7 @@ end
 beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "gnome-terminal"
+terminal = "kitty"
 editor = os.getenv("EDITOR") or "editor"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -353,7 +353,7 @@ globalkeys = gears.table.join(
     {description = "launch Brave Browser", group = "launcher"}
 ),
 -- Mod (Windows) + F to open Nautilus
-    awful.key({ modkey }, "f", function () awful.spawn("nautilus") end,
+    awful.key({ modkey }, "e", function () awful.spawn("nautilus") end,
           {description = "Open Nautilus", group = "launcher"}),
 -- Mod (Windows) + Shift + D to open Discord
     awful.key({ modkey, "Shift" }, "d", function () awful.spawn("discord") end,
@@ -680,3 +680,4 @@ beautiful.useless_gap=10
 awful.spawn.with_shell("polybar")
 awful.spawn.with_shell(" picom --experimental-backends --config ./Documents/p.conf -b")
 awful.spawn.with_shell("nitrogen --restore")
+awful.spawn.with_shell("xinput set-prop 'DELL083A:00 044E:120A Touchpad' 'libinput Tapping Enabled' 1")
